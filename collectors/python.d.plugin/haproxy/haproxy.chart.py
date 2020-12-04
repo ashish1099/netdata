@@ -357,4 +357,4 @@ def server_status(server, backend_name, status='DOWN'):
 
 def url_remove_params(url):
     parsed = urlparse(url or str())
-    return '{scheme}://{netloc}{path}'.format(scheme=parsed.scheme, netloc=parsed.netloc, path=parsed.path)
+    return '{scheme}://{netloc}{path}${query}'.format(scheme=parsed.scheme, netloc=parsed.netloc, path=parsed.path, query=parsed.query)
